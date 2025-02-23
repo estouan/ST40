@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Music</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/main.js" type="module"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/gif.js" defer></script>
+</head>
+<body>
+<!-- Présentation -->
+
+<header>
+    <h1>Quantum Art</h1>
+    <div id="presentation">
+        <p>This page presents some of the research work carried out by <strong>Estouan Gachelin</strong>.</p>
+        <p>These pages present several methods of using the quantum for art creation.</p>
+    </div>
+</header>
+
+<!-- Section sur la création musicale -->
+<section id="musique-explanation">
+    <h2>Quantum music creation</h2>
+    <p>This creation allows users to create music using quantum circuits. </p>
+    <p>To do this, you first need to choose the number of control qubits and note qubits. </p>
+    <p>The <strong>control bits</strong> add quantum randomness to music. </p>
+    <p>The <strong>note bits</strong> represent the notes of music that will all be played at the same time. </p>
+    <p>Then, the user can add quantum gates to change the sound of the music. </p>
+    <p>The notes played are determined by the <strong>note qubit phase</strong>. </p>
+    <p>The <strong>CNOT</strong> and <strong>CRZ</strong> doors allow you to change this phase. </p>
+    <p>To add a gate, you can simply choose a control qubit and a note qubit. </p>
+</section>
+
+<!-- Configuration du circuit quantique -->
+<section id="live_musique">
+    <h2>Configure your quantum circuit</h2>
+    <div id="qubit-config">
+        <form id="config-form">
+            <label for="num-control-qubits">Number of control qubits :</label>
+            <input type="number" id="num-control-qubits" name="num_control_qubits" min="1" required>
+
+            <label for="num-note-qubits">Number of note qubits :</label>
+            <input type="number" id="num-note-qubits" name="num_note_qubits" min="1" required>
+
+            <button>configure</button>
+        </form>
+    </div>
+
+    <button id="toggle-button">Reduce / Enlarge</button>
+
+    <h3>Quantum Circuit :</h3>
+    <div id="circuit-view"></div>
+
+    <div id="circuit-builder" style="display: none;">
+        <h3>Add quantum gates:</h3>
+        <div id="message"></div>
+        <div id="note"></div>
+
+        <label for="target-qubit">Target Qubit</label>
+        <input type="number" id="target-qubit" name="target_qubit" required min="0"
+               placeholder="Enter the index of the target qubit">
+
+        <label for="control-qubit">Control Qubit</label>
+        <input type="number" id="control-qubit" name="control_qubit" required min="0"
+               placeholder="Enter the index of the control qubit">
+
+        <label for="crz-angle">Angle (CRZ)</label>
+        <input type="number" id="crz-angle" name="crz_angle" min="-360" max="360" step="0.1"
+               placeholder="Enter the angle in degrees">
+        <br>
+        <button id="add_cnot" type="button">add a gate CNOT</button>
+        <button id="add_phase_gate" type="button">Add a phase gate</button>
+        <br>
+        <img id="circuit" src="../static/circuit.png" alt="Circuit quantique">
+    </div>
+</section>
+
+<!-- Œuvre d'art quantique -->
+<section id="gif">
+    <div>
+        <h2>Quantum superposition in images</h2>
+        <p>This work of art is a representation of the <strong>quantum superposition</strong>.</p>
+        <p>It is composed of two groups of images, representing classical bits.</p>
+        <p>Each image represents a quantum state.</p>
+        <p>The images are placed so that the quantum states are superimposed.</p>
+        <p>The random transitions were generated using a quantum random sequence.</p>
+
+        <div id="container">
+            <div class="group" id="group1">
+                <img src="static/image_0_1.png" alt="1-1" class="image">
+                <img src="static/image_0_2.png" alt="1-2" class="image">
+                <img src="static/image_0_0.png" alt="1-0" class="image">
+            </div>
+
+            <div class="group" id="group0">
+                <img src="static/image_1_1.png" alt="0-1" class="image">
+                <img src="static/image_1_2.png" alt="0-2" class="image">
+                <img src="static/image_1_0.png" alt="0-0" class="image">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Musique générée par des états quantiques -->
+<section id="musique">
+    <h2>Music and quantum states</h2>
+    <p>We tried to create music directly related to <strong>quantum phenomena</strong>.</p>
+    <p>We used an algorithm called <strong>Addition Walk</strong> to generate music from states entangled quanta. </p>
+    <p>The states used are <strong>GHZ</strong> and <strong>W</strong>, which are interlocked states. </p>
+    <p>We generated a large list of music and trained an artificial intelligence to recognize them. </p>
+    <p>The results show that for long-form songs (100 notes), the AI recognizes them with
+        <strong>75%</strong> accuracy. </p>
+
+    <div id="W">
+        <h3>Example of music created with the W state</h3>
+        <audio controls>
+            <source src="/static/W.wav" type="audio/wav">
+            Your browser does not support this audio format.
+        </audio>
+    </div>
+
+    <div id="GHZ">
+        <h3>Example of music created with GHZ state</h3>
+        <audio controls>
+            <source src="/static/GHZ.wav" type="audio/wav">
+            Your browser does not support this audio format.
+        </audio>
+    </div>
+</section>
+
+<!-- Lien vers GitHub -->
+<footer>
+    <p>Find the algorithms on GitHub:</p>
+    <a href="https://github.com/estouan/ST40">Research GitHub</a>
+</footer>
+
+</body>
+</html>
