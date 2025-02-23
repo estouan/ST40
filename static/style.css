@@ -1,0 +1,217 @@
+/* --- Styles généraux --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* --- Titres --- */
+h1 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #555555;
+    margin-top: 40px;
+}
+
+/* --- Sections --- */
+section {
+    background: #f8f8f8;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Présentation --- */
+#presentation {
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Formulaires & Inputs --- */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input, button {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input {
+    width: 50%;
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+button {
+    background: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    padding: 10px 20px;
+}
+
+button:hover {
+    background: #444444;
+}
+
+/* --- Quantum Circuit --- */
+#circuit-view {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Audio Player --- */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* --- Pied de page --- */
+footer {
+    background: #f0f0f0;
+    padding: 20px;
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+#gif #container {
+    position: relative;
+    min-width: 300px;  /* Taille minimale du conteneur */
+    min-height: 300px; /* Taille minimale du conteneur */
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    background-color: black;
+}
+
+#qubit-config.collapsed {
+    display: none;
+}
+
+
+#gif .group.visible {
+    opacity: 1;
+}
+
+
+
+#gif .image:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#gif .image:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#gif .image:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, -50%) translateY(-10%) scale(1.1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(10%) scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-10%) scale(1.1);
+        opacity: 0.4;
+    }
+}
+/*new*/
+#gif .group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+#gif .group.visible {
+    opacity: 1;
+}
+
+#gif .image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    opacity: 0.4;
+
+    transition: opacity 1s ease, transform 1s ease;
+    object-fit: contain;
+
+}
+
+#gif .highlight {
+    opacity: 0.5; /* L'image mise en avant devient totalement visible */
+    transform: translate(-50%, -50%) scale(1.2); /* Légère mise en avant avec agrandissement */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, -50%) translateY(-10%) scale(1.1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(10%) scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-10%) scale(1.1);
+        opacity: 0.4;
+    }
+}
